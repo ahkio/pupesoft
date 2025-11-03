@@ -159,6 +159,10 @@ if (!function_exists("pankkitiedot")) {
         $pankki["pankkilaitos"] = "Calyon";
         $pankki["swift"] = "BSUIFIHH";
         break;
+      case (714):
+        $pankki["rahalaitos"] = '  ';
+        $pankki["pankkilaitos"] = "Alisa Pankki";
+        $pankki["swift"] = "EVSEFIHH";
       case (715) : // Itella Pankki
         $pankki["rahalaitos"] = '  ';
         $pankki["pankkilaitos"] = "Itella Pankki";
