@@ -65,7 +65,7 @@ class Presta17RestApi
       'Suomi' => 'Finland',
       'Ruotsi' => 'Sweden',
       'Viro' => 'Estonia',
-      'Venï¿½jï¿½' => 'Russian Federation',
+      'Venäjä' => 'Russian Federation',
       'Saksa' => 'Germany'
     );
   } 
@@ -653,15 +653,15 @@ class Presta17RestApi
 
       if ($pupesoft_product['yksikko'] and $pupesoft_product['yksikko'] != '') {
         $new_feat = $productFields->associations->product_features->addChild('product_feature');
-        $new_feat->addChild('id', $this->getPrestashopProductFeature('Yksikkï¿½'));
-        $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['yksikko'], $this->getPrestashopProductFeature('Yksikkï¿½'));
+        $new_feat->addChild('id', $this->getPrestashopProductFeature('Yksikkö'));
+        $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['yksikko'], $this->getPrestashopProductFeature('Yksikkö'));
         $new_feat->addChild('id_feature_value', $product_val);
       }
 
       if ($pupesoft_product['myynti_era'] and $pupesoft_product['myynti_era'] != '' and $pupesoft_product['myynti_era'] > 0) {
           $new_feat = $productFields->associations->product_features->addChild('product_feature');
-          $new_feat->addChild('id', $this->getPrestashopProductFeature('Myyntierï¿½'));
-          $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['myynti_era'], $this->getPrestashopProductFeature('Myyntierï¿½'));
+          $new_feat->addChild('id', $this->getPrestashopProductFeature('Myyntierä'));
+          $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['myynti_era'], $this->getPrestashopProductFeature('Myyntierä'));
           $new_feat->addChild('id_feature_value', $product_val);
       }
 
@@ -775,15 +775,15 @@ class Presta17RestApi
 
       if ($pupesoft_product['yksikko'] and $pupesoft_product['yksikko'] != '') {
         $new_feat = $productFields->associations->product_features->addChild('product_feature');
-        $new_feat->addChild('id', $this->getPrestashopProductFeature('Yksikkï¿½'));
-        $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['yksikko'], $this->getPrestashopProductFeature('Yksikkï¿½'));
+        $new_feat->addChild('id', $this->getPrestashopProductFeature('Yksikkö'));
+        $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['yksikko'], $this->getPrestashopProductFeature('Yksikkö'));
         $new_feat->addChild('id_feature_value', $product_val);
       }
 
       if ($pupesoft_product['myynti_era'] and $pupesoft_product['myynti_era'] != '' and $pupesoft_product['myynti_era'] > 0) {
         $new_feat = $productFields->associations->product_features->addChild('product_feature');
-        $new_feat->addChild('id', $this->getPrestashopProductFeature('Myyntierï¿½'));
-        $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['myynti_era'], $this->getPrestashopProductFeature('Myyntierï¿½'));
+        $new_feat->addChild('id', $this->getPrestashopProductFeature('Myyntierä'));
+        $product_val = $this->getPrestashopProductFeatureValues($pupesoft_product['myynti_era'], $this->getPrestashopProductFeature('Myyntierä'));
         $new_feat->addChild('id_feature_value', $product_val);
       }
 
@@ -1000,7 +1000,7 @@ class Presta17RestApi
 
     $customerFields->firstname = '-';
 
-    if (!preg_match("/^[a-zA-Z\s\ï¿½\ï¿½\ï¿½\ï¿½]+$/", $customer['nimi'])) {
+    if (!preg_match("/^[a-zA-Z\s\ä\Ä\ö\Ö]+$/", $customer['nimi'])) {
       $address['nimi'] = 'Tuntematon';
     } 
     $customerFields->lastname = str_replace(array(".","@"), " ", $customer['nimi']);
@@ -1971,7 +1971,7 @@ class Presta17RestApi
           $addressesFields->alias = $address['nimi'];
 
           $addressesFields->firstname = '-';
-          if (!preg_match("/^[a-zA-Z\s\ï¿½\ï¿½\ï¿½\ï¿½]+$/", $address['nimi'])) {
+          if (!preg_match("/^[a-zA-Z\s\ä\Ä\ö\Ö]+$/", $address['nimi'])) {
             $address['nimi'] = 'Tuntematon';
           }
           $addressesFields->lastname = str_replace(array(".","@"), " ", $address['nimi']);
