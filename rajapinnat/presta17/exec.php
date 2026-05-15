@@ -77,6 +77,7 @@ class Presta17RestApi
                 JOIN puun_alkio on (tuote.yhtio =  puun_alkio.yhtio and tuote.tuoteno = puun_alkio.liitos) 
                 JOIN dynaaminen_puu on (puun_alkio.yhtio = dynaaminen_puu.yhtio and puun_alkio.puun_tunnus = dynaaminen_puu.tunnus) 
                 where tuote.yhtio='$yhtio' and tuote.nakyvyys = 1
+                and tuote.status != 'P'
                 and (
                 (tuote.muutospvm between date_sub(now(),INTERVAL '$days' DAY) and now()) 
                 or 
